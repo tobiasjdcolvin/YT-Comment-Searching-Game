@@ -1,6 +1,8 @@
 # YouTube Video Comments Searching Game
 A program utilizing the YouTube Data API that searches all of the comments of a YouTube video for a secret passphrase, and if found, makes the video private.
 
+Demo: [https://youtu.be/b6WbJzR1cIc?si=ee56IfPnNM0QRYiH](https://youtu.be/b6WbJzR1cIc?si=ee56IfPnNM0QRYiH)
+
 ## How to use:
 1. Sign in to the Google Cloud console, create a new project and enable the YouTube Data API v3
 2. Go to the Credentials tab and create an API key as well as set up and create an OAuth 2.0 Client ID
