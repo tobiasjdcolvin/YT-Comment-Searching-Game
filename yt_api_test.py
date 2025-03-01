@@ -1,4 +1,5 @@
 import os
+import re
 
 import google_auth_oauthlib.flow
 import googleapiclient.discovery
@@ -52,7 +53,8 @@ def main():
 
     for text in comment_texts:
         # Test for if the secret password is found
-        if SECRET_PASSWORD.lower() in text.lower():
+        pattern_password = rf"(?!\w){re.escape(SECRET_PASSWORD)}(?!\w)"
+        if re.search(pattern_password, text):
             found = True
             print("\nFOUND SECRET PASSWORD\n")
             with open("winner_info.txt", "w") as f:
