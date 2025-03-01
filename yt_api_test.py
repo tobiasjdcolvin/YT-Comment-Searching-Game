@@ -31,7 +31,8 @@ def main():
     print("processed first 100 comments")
 
     # Can only process 100 comments at a time, so do until no more comments exist:
-    while 'nextPageToken' in response:
+    #Or exit if founded the password so the first pearson will win no the last
+    while 'nextPageToken' in response and not found:
         # Add the text from every reply comment to the comment_texts list
         for item in response['items']:
             comment_texts.append("COMMENT:\t" + item['snippet']['topLevelComment']['snippet']['textDisplay'] + f"\t\tAUTHOR OF COMMENT: {item['snippet']['topLevelComment']['snippet']['authorDisplayName']}" + f"\nLINK TO COMMENT: https://www.youtube.com/watch?v={VID_ID}&lc={item['snippet']['topLevelComment']['id']}")
