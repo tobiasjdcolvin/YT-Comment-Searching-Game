@@ -53,7 +53,7 @@ def main():
 
     for text in comment_texts:
         # Test for if the secret password is found
-        pattern_password = rf"\b{re.escape(SECRET_PASSWORD)}[\s\n]"
+        pattern_password = rf"(?!\w){re.escape(SECRET_PASSWORD)}(?!\w)"
         if re.search(pattern_password, text):
             found = True
             print("\nFOUND SECRET PASSWORD\n")
